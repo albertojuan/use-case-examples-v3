@@ -8,6 +8,7 @@ SQL >
         toDate(timestamp) AS date,
         session_id,
         'production' AS environment,
+        'new_column' AS new_column,
         anySimpleState(device) AS device,
         anySimpleState(browser) AS browser,
         anySimpleState(location) AS location,
