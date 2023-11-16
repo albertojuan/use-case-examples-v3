@@ -17,7 +17,8 @@ SQL >
         location,
         referrer,
         uniqState(session_id) AS visits,
-        countState() AS hits
+        countState() AS hits,
+        'p' as environment,
     FROM analytics_hits
     WHERE domainWithoutWWW(referrer) != currenct_domain
     GROUP BY
@@ -25,7 +26,8 @@ SQL >
         device,
         browser,
         location,
-        referrer
+        referrer,
+        environment
 
 TYPE materialized
 DATASOURCE analytics_sources_mv
