@@ -11,14 +11,16 @@ SQL >
         location,
         pathname,
         uniqState(session_id) AS visits,
-        countState() AS hits
+        countState() AS hits,
+        'production' AS environment
     FROM analytics_hits
     GROUP BY
         date,
         device,
         browser,
         location,
-        pathname
+        pathname,
+        environment
 
 TYPE materialized
 DATASOURCE analytics_pages_mv
