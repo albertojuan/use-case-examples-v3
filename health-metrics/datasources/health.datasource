@@ -13,7 +13,8 @@ SCHEMA >
     `blood_pressure` Float32 `json:$.blood_pressure`,
     `oxygen_saturation` Float32 `json:$.oxygen_saturation`,
     `body_temperature` Float32 `json:$.body_temperature`,
-    `stress_level` Int32 `json:$.stress_level`
+    `stress_level` Int32 `json:$.stress_level`,
+    `device_battery` Float32 `json:$.device_battery`
 
 ENGINE "MergeTree"
 ENGINE_PARTITION_KEY "toYear(timestamp)"
