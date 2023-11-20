@@ -15,7 +15,9 @@ SCHEMA >
     `body_temperature` Float32 `json:$.body_temperature`,
     `stress_level` Int32 `json:$.stress_level`,
     `device_battery` Float32 `json:$.device_battery`,
-    `new_column` Int32 `json:$.new_column`
+    `new_column` Int32 `json:$.new_column`,
+    `new_column_2` Int32 `json:$.new_column_2`,
+
 
 ENGINE "MergeTree"
 ENGINE_PARTITION_KEY "toYear(timestamp)"
