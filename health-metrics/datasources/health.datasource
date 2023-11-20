@@ -1,0 +1,20 @@
+DESCRIPTION >
+    health metrics got from a smart watch
+
+SCHEMA >
+    `timestamp` DateTime `json:$.timestamp`,
+    `heart_rate` Int32 `json:$.heart_rate`,
+    `steps` Int32 `json:$.steps`,
+    `calories_burned` Float32 `json:$.calories_burned`,
+    `distance` Float32 `json:$.distance`,
+    `sleep_duration` Int32 `json:$.sleep_duration`,
+    `sleep_quality` Float32 `json:$.sleep_quality`,
+    `active_minutes` Int32 `json:$.active_minutes`,
+    `blood_pressure` Float32 `json:$.blood_pressure`,
+    `oxygen_saturation` Float32 `json:$.oxygen_saturation`,
+    `body_temperature` Float32 `json:$.body_temperature`,
+    `stress_level` Int32 `json:$.stress_level`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(timestamp)"
+ENGINE_SORTING_KEY "timestamp, sleep_duration, active_minutes, stress_level"
