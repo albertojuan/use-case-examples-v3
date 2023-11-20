@@ -14,7 +14,7 @@ SCHEMA >
     `oxygen_saturation` Float32 `json:$.oxygen_saturation`,
     `body_temperature` Float32 `json:$.body_temperature`,
     `stress_level` Int32 `json:$.stress_level`,
-    `device_battery` Float32,
+    `device_battery` Float32 `json:$.device_battery`,
     `new_column` Int32 `json:$.new_column`
 
 ENGINE "MergeTree"
